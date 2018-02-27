@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "production": "pm2 start ./bin/www --name payment-tuk-api ./node_modules/babel-node",
+    "dev": "nodemon ./bin/www -exec babel-node"
   },
   "dependencies": {
     "babel-cli": "^6.26.0",
@@ -15,6 +16,8 @@
     "express": "~4.15.5",
     "jade": "~1.11.0",
     "morgan": "~1.9.0",
+    "nodemon": "^1.15.1",
+    "pm2": "^2.10.1",
     "serve-favicon": "~2.4.5"
   }
 }
